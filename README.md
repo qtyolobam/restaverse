@@ -4,12 +4,36 @@ A monolithic restaurant overview platform that combines customer-facing applicat
 
 ## Key Features
 
-### Customer Experience
+## Login Page
 
-- Rating and review system
-- Location-based restaurant discovery
-- Restaurant photos and menu viewing
-- User reviews and ratings
+![Login](https://github.com/user-attachments/assets/e9477889-2e6c-42c3-bca0-b5dc6efba6c3)
+
+
+## Restaurant Form
+
+![RestaurantForm](https://github.com/user-attachments/assets/6a304eaf-5e63-44b0-b091-5526a0996db7)
+
+
+## Menu Form
+
+![MenuForm](https://github.com/user-attachments/assets/54a8445c-f450-42c7-a994-1c75a88b88ab)
+
+
+## Scrape Request Waiting Page
+
+![ComeBackLater](https://github.com/user-attachments/assets/6d6a90a3-2617-4cf1-a073-6e924868a58d)
+
+
+## Dashboard
+
+![Dashboard](https://github.com/user-attachments/assets/4d9bb59a-8c80-4cf3-8f5f-6863a9c38c11)
+
+
+## Restaurant Menu
+
+
+![MenuPNG](https://github.com/user-attachments/assets/ad3f0420-c47e-4437-bfd1-bbe84bb96bc8)
+
 
 ### Restaurant Information
 
