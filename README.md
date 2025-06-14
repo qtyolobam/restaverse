@@ -78,7 +78,7 @@ A monolithic restaurant overview platform that combines customer-facing applicat
 1. Clone the repository:
 
 ```bash
-git clone []
+git clone https://github.com/qtyolobam/restaverse
 cd tp-monolith
 ```
 
