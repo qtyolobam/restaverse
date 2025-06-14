@@ -67,6 +67,10 @@ npm install
 # Backend
 cd ../backend
 npm install
+
+# Worker
+cd ../swiggy-worker
+pip intsall -r requirements.txt
 ```
 
 3. Set up environment variables:
