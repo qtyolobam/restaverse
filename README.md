@@ -79,7 +79,7 @@ A monolithic restaurant overview platform that combines customer-facing applicat
 
 ```bash
 git clone https://github.com/qtyolobam/restaverse
-cd tp-monolith
+cd restaverse
 ```
 
 2. Install dependencies:
