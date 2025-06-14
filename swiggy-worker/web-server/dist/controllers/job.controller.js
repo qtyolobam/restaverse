@@ -15,6 +15,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.jobController = void 0;
 const jobRoutes_1 = require("../utils/validations/jobRoutes");
 const seederJob_1 = __importDefault(require("../jobs/seederJob"));
+// A basic job controller for the seeder job
 const jobController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const result = jobRoutes_1.jobSchema.safeParse(req.body);

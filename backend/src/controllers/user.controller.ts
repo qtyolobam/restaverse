@@ -147,7 +147,29 @@ export const fetchPreviousScrapedData = async (req: Request, res: Response) => {
     }
 
     if (user.scrapeRequests.length === 0) {
-      res.status(200).json({ error: "No scrape requests found", msgCode: 404 });
+      // Find the scrape with same pincode and status completed
+      const restaurant = await prisma.restaurant.findFirst({
+        where: {
+          userId: req.user!.id,
+        },
+        select: {
+          pincode: true,
+        },
+      });
+
+      const pincode = restaurant?.pincode;
+
+      const swiggyRestaurants = await prisma.swiggyRestaurant.findMany({
+        where: {
+          pincode,
+        },
+      });
+
+      res.status(200).json({
+        message: "Previous scraped data fetched",
+        restaurants: swiggyRestaurants,
+      });
+
       return;
     }
 

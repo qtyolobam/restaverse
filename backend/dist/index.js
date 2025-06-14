@@ -7,7 +7,7 @@ const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
 require("dotenv/config");
 const cookie_parser_1 = __importDefault(require("cookie-parser"));
-// Environment variables
+// Environment variable
 const PORT = process.env.PORT || 3000;
 // Local imports
 const restaurant_router_1 = __importDefault(require("./routers/restaurant.router"));

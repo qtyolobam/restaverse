@@ -15,6 +15,7 @@ app.use(express_1.default.json());
 app.use("/scrape", scrape_router_1.default);
 // Jobs
 app.post("/jobs", job_controller_1.jobController);
+// Running the server
 app.listen(process.env.PORT, () => {
     console.log(`Server is running on port ${process.env.PORT}`);
 });

@@ -135,6 +135,7 @@ const fetchUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     }
 });
 exports.fetchUser = fetchUser;
+// Adhoc controller
 const fetchPreviousScrapedData = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const user = yield database_1.default.user.findUnique({

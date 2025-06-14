@@ -1,4 +1,5 @@
 "use strict";
+// A singleton client for prisma (neccessary for dev env)
 var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
 const client_1 = require("@prisma/client");

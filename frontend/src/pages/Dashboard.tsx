@@ -86,7 +86,6 @@ export default function Dashboard() {
         console.log(res.data.msgCode);
         // Some confusing custom status codes
         if (res.data.msgCode === 404) {
-          // Meaning that there is no scrape yet (no possible was some bug previously)
           setIsScraping(true);
           api.post(`/users/scrape`).then((res) => {
             console.log(res.data);

@@ -17,6 +17,7 @@ const database_1 = __importDefault(require("../clients/database"));
 const google_1 = require("../clients/auth/google");
 const token_1 = require("../utils/auth/token");
 const auth_1 = require("../utils/validations/auth");
+// Google authentication controller
 const googleAuth = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         // Input validation
@@ -71,6 +72,7 @@ const googleAuth = (req, res) => __awaiter(void 0, void 0, void 0, function* () 
     }
 });
 exports.googleAuth = googleAuth;
+// Refresh access token generator
 const refresh = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const token = req.cookies["refresh_token"];
     if (!token) {
@@ -96,6 +98,7 @@ const refresh = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     }
 });
 exports.refresh = refresh;
+// Logout
 const logout = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         res

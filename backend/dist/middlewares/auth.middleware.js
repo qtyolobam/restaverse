@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.authMiddleware = void 0;
 const token_1 = require("../utils/auth/token");
+// Middleware to check if the user is authenticated, router protector
 const authMiddleware = (req, res, next) => {
     const token = req.cookies["access_token"];
     if (!token) {

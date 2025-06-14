@@ -21,12 +21,14 @@ const scrapingRoutes_1 = require("../utils/validations/scrapingRoutes");
 const scrape = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const scrapeParams = req.body;
+        // Input validation
         if (!scrapingRoutes_1.scrapeSchema.safeParse(scrapeParams).success) {
             res.status(400).json({ message: "Invalid parameters" });
             return;
         }
         let { userId, pincode, limit, cuisines } = scrapeParams;
         console.log("Scrape Request Received", scrapeParams);
+        // Create a scrape entry
         const scrapeRequest = yield index_1.default.scrapeRequest.create({
             data: {
                 userId: userId,
@@ -37,8 +39,8 @@ const scrape = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
             },
         });
         cuisines = cuisines.join(",");
-        // Call the script
         const scriptPath = path_1.default.join(__dirname, "..", "jobs", "worker-script", "main.py");
+        // Calling the script in a child process
         const pythonProcess = (0, child_process_1.spawn)("python", [
             scriptPath,
             `--pincode=${pincode}`,

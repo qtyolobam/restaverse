@@ -4,6 +4,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.scrapeSchema = void 0;
+// Basic zod validations
 const zod_1 = __importDefault(require("zod"));
 exports.scrapeSchema = zod_1.default.object({
     userId: zod_1.default.string(),

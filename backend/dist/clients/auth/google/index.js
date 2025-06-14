@@ -11,7 +11,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.verifyGoogle = void 0;
 const google_auth_library_1 = require("google-auth-library");
+// Google client
 const googleClient = new google_auth_library_1.OAuth2Client(process.env.GOOGLE_CLIENT_ID);
+// Helper function
 const verifyGoogle = (idToken) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const ticket = yield googleClient.verifyIdToken({
