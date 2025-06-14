@@ -45,6 +45,7 @@ A monolithic restaurant overview platform that combines customer-facing applicat
 
 - Node.js (v14 or higher)
 - PostgresDB
+- Python v3
 - npm or yarn
 - Git
 
