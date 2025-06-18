@@ -126,6 +126,8 @@ npm start
 # Frontend
 cd frontend
 npm run dev
+
+# The login page is on the /login route home route is empty
 ```
 
 ## Usage
