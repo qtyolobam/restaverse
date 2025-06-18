@@ -33,7 +33,6 @@ const seederJob = () => __awaiter(void 0, void 0, void 0, function* () {
         // Check for restaurants.json file
         let restaurantsJsonFile = files.find((file) => file.endsWith("restaurants.json"));
         if (!restaurantsJsonFile) {
-            console.log();
             throw new Error("Restaurants.json file does not exist");
         }
         let restaurantsFile = fs_1.default.readFileSync(path_1.default.join(restaurantsDir, restaurantsJsonFile), "utf8");

@@ -27,7 +27,6 @@ const seederJob = async () => {
     );
 
     if (!restaurantsJsonFile) {
-      console.log();
       throw new Error("Restaurants.json file does not exist");
     }
 

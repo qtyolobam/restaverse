@@ -163,6 +163,26 @@ export const fetchPreviousScrapedData = async (req: Request, res: Response) => {
         where: {
           pincode,
         },
+        select: {
+          id: true,
+          url: true,
+          name: true,
+          rating: true,
+          deliveryTime: true,
+          cuisines: true,
+          pincode: true,
+          area: true,
+          swiggyMenuItems: {
+            select: {
+              id: true,
+              name: true,
+              price: true,
+              rating: true,
+              description: true,
+              imageUrl: true,
+            },
+          },
+        },
       });
 
       res.status(200).json({

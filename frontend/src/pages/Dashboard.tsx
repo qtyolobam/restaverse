@@ -97,6 +97,7 @@ export default function Dashboard() {
         } else if (res.status === 200) {
           // Data is fetched and ready to be displayed
           console.log("test");
+          console.log(res.data.restaurants);
           setSwiggyRestaurants(res.data.restaurants);
           setIsScraping(false);
           setIsLoading(false);

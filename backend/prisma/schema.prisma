@@ -9,7 +9,7 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider  = "postgresql"
   url       = env("DATABASE_URL")
   directUrl = env("DIRECT_URL")
 }
@@ -22,9 +22,9 @@ model User {
   onboarded Boolean  @default(false)
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  
+
   // Relationships
-  restaurants Restaurant[]
+  restaurants    Restaurant[]
   scrapeRequests ScrapeRequest[]
 
   @@index([email])
@@ -42,7 +42,7 @@ model ScrapeRequest {
 
   // Relationships
   swiggyRestaurants SwiggyRestaurant[]
-  user      User     @relation(fields: [userId], references: [id])
+  user              User               @relation(fields: [userId], references: [id])
 }
 
 model Restaurant {
@@ -50,65 +50,63 @@ model Restaurant {
   userId    String
   name      String
   cuisines  String[]
-  pincode       String
+  pincode   String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 
   // Relationships
-  user      User     @relation(fields: [userId], references: [id])
+  user      User       @relation(fields: [userId], references: [id])
   menuItems MenuItem[]
 
   @@index([userId])
 }
 
-
 model MenuItem {
-  id            String   @id @default(uuid())
-  restaurantId  String
-  name          String
-  price         String
-  createdAt     DateTime @default(now())
-  updatedAt     DateTime @updatedAt
+  id           String   @id @default(uuid())
+  restaurantId String
+  name         String
+  price        String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
 
-
-  restaurant    Restaurant @relation(fields: [restaurantId], references: [id])
+  restaurant Restaurant @relation(fields: [restaurantId], references: [id])
 
   @@index([restaurantId])
-} 
+}
 
 model SwiggyRestaurant {
-  id                String   @id @default(uuid())
-  url               String
-  name              String
-  rating            String   @default("0")
-  deliveryTime      String   @default("")
-  cuisines          String[] @default([])
-  pincode           String      
-  area              String   @default("")
-  scrapeRequestId   String
-  createdAt         DateTime @default(now())
-  updatedAt         DateTime @updatedAt
+  id              String   @id @default(uuid())
+  url             String
+  name            String
+  rating          String   @default("0")
+  deliveryTime    String   @default("")
+  cuisines        String[] @default([])
+  pincode         String
+  area            String   @default("")
+  scrapeRequestId String
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
 
   // Relationships
-  swiggyMenuItems   SwiggyMenuItem[]
-  scrapeRequest     ScrapeRequest @relation(fields: [scrapeRequestId], references: [id], onDelete: Restrict)
+  swiggyMenuItems SwiggyMenuItem[]
+  scrapeRequest   ScrapeRequest    @relation(fields: [scrapeRequestId], references: [id], onDelete: Restrict)
 
   @@index([scrapeRequestId])
 }
 
 model SwiggyMenuItem {
-  id            String   @id @default(uuid())
-  swiggyRestaurantId  String
-  name          String
-  imageUrl      String
-  price         String
-  rating        String   @default("0")
-  description   String   @default("")
-  createdAt     DateTime @default(now())
-  updatedAt     DateTime @updatedAt
+  id                 String   @id @default(uuid())
+  swiggyRestaurantId String
+  name               String
+  imageUrl           String
+  price              String
+  rating             String   @default("0")
+  description        String   @default("")
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
 
   // Relationships
-  swiggyRestaurant    SwiggyRestaurant @relation(fields: [swiggyRestaurantId], references: [id])
+  swiggyRestaurant SwiggyRestaurant @relation(fields: [swiggyRestaurantId], references: [id])
 
   @@index([swiggyRestaurantId])
-} 
+}

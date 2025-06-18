@@ -78,8 +78,10 @@ class MenuScraper:
                                         price_spans = detail.select("span")
                                         if(len(price_spans) > 1):
                                             price = price_spans[1].get_text(strip=True)
-                                        else:
+                                        elif(len(price_spans) > 1 or len(price_spans) == 1):
                                             price = price_spans[0].get_text(strip=True)
+                                        if(not price):
+                                            price = ""  
                                         item_dict['price'] = price
                                     elif idx == 3:
                                         thirdDiv = detail.get_text(strip=True)
