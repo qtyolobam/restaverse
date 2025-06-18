@@ -95,7 +95,7 @@ npm install
 
 # Worker
 cd ../swiggy-worker
-pip intsall -r requirements.txt
+pip install -r requirements.txt
 ```
 
 3. Set up environment variables:
@@ -103,9 +103,17 @@ pip intsall -r requirements.txt
 
    - Google cloud acc for auth
    - PostgresDB instance
+  
+4. Build the swiggy-worker backend
+```bash
+# Swiggy-worker Backend
+cd swiggy-worker/web-server
+npm run build
 
-4. Start the services:
+# Copy the worker-script folder from the webserver folder into the build folder(dist/jobs)
+```
 
+5. Running the project
 ```bash
 # Backend
 cd backend
@@ -118,6 +126,8 @@ npm start
 # Frontend
 cd frontend
 npm run dev
+
+# The login page is on the /login route home route is empty
 ```
 
 ## Usage
