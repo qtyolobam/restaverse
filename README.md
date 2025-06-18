@@ -14,6 +14,7 @@ A monolithic restaurant overview platform that combines customer-facing applicat
 ![RestaurantForm](https://github.com/user-attachments/assets/6a304eaf-5e63-44b0-b091-5526a0996db7)
 
 
+
 ## Menu Form
 
 ![MenuForm](https://github.com/user-attachments/assets/54a8445c-f450-42c7-a994-1c75a88b88ab)
@@ -129,6 +130,10 @@ npm run dev
 
 # The login page is on the /login route home route is empty
 ```
+## NOTE
+While inserting the cuisines for testing purposes use only American, Chinese, South Indian, Asian, Bakery (i havent added a select for that [TODO])
+
+
 
 ## Usage
 
