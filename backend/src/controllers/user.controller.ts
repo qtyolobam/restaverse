@@ -129,7 +129,7 @@ export const fetchUser = async (req: Request, res: Response) => {
 // Adhoc controller
 export const fetchPreviousScrapedData = async (req: Request, res: Response) => {
   try {
-    const user = await prisma.user.findUnique({
+    const user = await prisma.user.findFirst({
       where: { id: req.user!.id },
       select: {
         scrapeRequests: {
@@ -145,6 +145,7 @@ export const fetchPreviousScrapedData = async (req: Request, res: Response) => {
       res.status(404).json({ error: "User not found" });
       return;
     }
+    console.log(user);
 
     if (user.scrapeRequests.length === 0) {
       // Find the scrape with same pincode and status completed

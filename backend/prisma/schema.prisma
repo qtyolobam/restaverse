@@ -35,7 +35,7 @@ model ScrapeRequest {
   pincode   String
   limit     Int
   cuisines  String[]
-  userId    String[]
+  userId    String
   status    String   @default("pending")
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
