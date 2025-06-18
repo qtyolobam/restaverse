@@ -110,7 +110,7 @@ pip install -r requirements.txt
 cd swiggy-worker/web-server
 npm run build
 
-# Copy the worker-script from the webserver folder into the build folder(dist/jobs)
+# Copy the worker-script folder from the webserver folder into the build folder(dist/jobs)
 ```
 
 5. Running the project
